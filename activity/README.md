@@ -23,7 +23,7 @@ Any other name/value pair that is valid in [JSON](https://en.wikipedia.org/wiki/
 
 ### Example
 
-```json
+```yaml
 {
   "format": "activity",
   "payload": [
