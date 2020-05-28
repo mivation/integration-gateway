@@ -69,8 +69,8 @@ Accept: application/json, text/json
 
 In the above example:
 - The `request_id` is any string identifier supplied by you for the transaction.  This will be echoed back on the callback (optional).  It will also be used for ensuring single-processing of transaction.
-- The "format" is the format of the payload records based on the agreed upon data interchanges for your use-case.
-- the "payload" contains 1-10,000 records of data.
+- The `format` is the format of the payload records based on the agreed upon data interchanges for your use-case.
+- the `payload` contains 1-10,000 records of data.
 
 ----
 
@@ -83,7 +83,7 @@ Content-Type: application/json
 { "id": "ff68d5fd-ae6d-4349-9f71-3641f8b29043" }
 ```
 In the above example:
-- The "id" is a unique identifier supplied by Mivation for the transaction.  This also will be echoed back on the callback (optional).  It can also be used for reconciliation.
+- The `id` is a unique identifier supplied by Mivation for the transaction.  This also will be echoed back on the callback (optional).  It can also be used for reconciliation.
 
 ----
 
@@ -115,6 +115,6 @@ Accept: application/json, text/json
 ```
 
 In the above example:
-- The "id" is a the unique identifier supplied by Mivation for the original transaction, in the HTTPS response.
-- The "request_id" is the string identifier supplied by you for the original transaction.
-- the "results" contains 1-100 results, matching the original transaction.  Each result will refer to the index position from the original request as well as echo back any "id" supplied with the original request item.  The "result" and possible "error" elements indicate success or failure of processing for each record and a possible failure reason.
+- The `id` is a the unique identifier supplied by Mivation for the original transaction, in the HTTPS response.
+- The `request_id` is the string identifier supplied by you for the original transaction.
+- the `results` contains 1-100 results, matching the original transaction.  Each result will refer to the index position from the original request as well as echo back any `id` supplied with the original request item.  The `result` and possible `error` elements indicate success or failure of processing for each record and a possible failure reason.
