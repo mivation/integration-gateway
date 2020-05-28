@@ -4,7 +4,7 @@ The Mivation solutions support push of data via a flexible integration-gateway t
 
 - All data is pushed through HTTPS POST of "text/json" or "application/json" to our API.
 - All calls are authenticated via Basic authentication or Bearer tokens.
-- Each gateway push can contain from 1 to 10,000 records of data.
+- Each gateway push can contain from 1 to 10,000 records of data, with a maximum size of 10MB.
 - The format of the records is fluid with the exception of the envelope (see below)
 - Our server will generally return one of the following responses
   - 202 – Accepted
@@ -17,9 +17,9 @@ The Mivation solutions support push of data via a flexible integration-gateway t
   - 401 – Unauthorized
     - The request came without authentication or with invalid credentials
 - Our server queues all request using enterprise grade queuing technology.  You can expect all requests to be turned around by our server sub-second.
-- The "format" in the post is assigned by Mivation during integration planning with the credentials.
-- The is an optional callback that will be posted to a web-hook handler on your end when the message has been processed and/or if there is a problem processing the message
-- Large payloads will be split into 100 record fragments for processing and will send one callback per fragment.
+- The `format` in the post is assigned by Mivation during integration planning with the credentials.
+- The is an optional callback that will be posted to a web-hook handler on your end when the message has been processed and/or if there is a problem processing the message.  The optional `id` for each payload record is *required* when using callbacks.
+- Payloads may be split smaller fragments for processing. When split, one callback will be sent for each fragment.
 
 
 ----
@@ -30,7 +30,7 @@ The Mivation solutions support push of data via a flexible integration-gateway t
 
 
 ### Example Request
-```
+```yaml
 POST /push HTTP/1.1
 Host: gateway.mivation.com
 Connection: keep-alive
@@ -75,7 +75,7 @@ In the above example:
 ----
 
 ### Example Response
-```
+```yaml
 HTTP/1.1 202 Accepted
 Content-Length: <body-length>
 Content-Type: application/json
@@ -88,7 +88,7 @@ In the above example:
 ----
 
 ### Example Callback
-```
+```yaml
 POST /callback HTTP/1.1
 Host: server.yourcompany.com
 Content-Length: <body-length>
