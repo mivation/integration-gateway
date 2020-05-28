@@ -25,29 +25,29 @@ Any other name/value pair that is valid in [JSON](https://en.wikipedia.org/wiki/
 
 ```json
 {
-	"format": "activity",
-	"payload": [
-		{ 
-			"id": "02784e36-e70f4c86595b",
-			"type": "call",
-			"timestamp": "2020-05-18T21:15:00-5:00",
-			"duration": "PT25M30S",
-			"user_email": "jonny.test@mivation.com",
-			"contact": "+18774289403",
-			"direction": "outbound"
-		},
-		{ 
-			"id": "25b8d74f-3becb0ede39f",
-			"type": "quote",
-			"timestamp": "2020-05-18T21:20:00-5:00",
-			"user_email": "jonny.test@mivation.com",
-			"contact": "Jane S",
-			"product_line": "fire",
-			"product": "Renters",
-			"amount": 123.45,
-			"href" : "https://my.quotes.net/25b8d74f-3becb0ede39f"
-		}		
-	]
+  "format": "activity",
+  "payload": [
+    { 
+      "id": "02784e36-e70f4c86595b",
+      "type": "call",
+      "timestamp": "2020-05-18T21:15:00-5:00",
+      "duration": "PT25M30S",
+      "user_email": "jonny.test@mivation.com",
+      "contact": "+18774289403",
+      "direction": "outbound"
+    },
+    { 
+      "id": "25b8d74f-3becb0ede39f",
+      "type": "quote",
+      "timestamp": "2020-05-18T21:20:00-5:00",
+      "user_email": "jonny.test@mivation.com",
+      "contact": "Jane S",
+      "product_line": "fire",
+      "product": "Renters",
+      "amount": 123.45,
+      "href" : "https://my.quotes.net/25b8d74f-3becb0ede39f"
+    }		
+  ]
 }
 ```
 
