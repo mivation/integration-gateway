@@ -17,9 +17,10 @@ The activity data feed is the standard feed for customer/partner data to come in
 | `duration` | No | [ISO 8601#D](https://en.wikipedia.org/wiki/ISO_8601#Durations) | `PT25M30S` | For activity types, such as `call`, where there is a specific length of elapsed time, this field provides that value.  This will be used, along with `timestamp`, to calculate `end_timestamp`, unless that is explicitly provided. |
 | `product` | No | string | `Renters` | For activities such as `quote` where product information applies, this field provides that value. | 
 | `amount` | No | decimal | `123.45` | For activities such as `quote` or `sale` where there is a relevant amount, this field provides that value.|
+| `tags` | No | string [ ] | `["tag1","tag2",tag3"]` | For activities from source systems that connect simple tag values to the activity that can be used to determine applicability for competition scoring rules.  |
 
 ### Custom Fields
-Any other name/value pair that is valid in [JSON](https://en.wikipedia.org/wiki/JSON#Data_types_and_syntax) can be provided.  This includes JSON arrays and nested objects.  These may or may not be processed by the target system, depending on the defined rules.  (see examples below for custom `direction` and `product_line` fields)
+Nearly any other name/value pair that is valid [JSON](https://en.wikipedia.org/wiki/JSON#Data_types_and_syntax) can be provided, including simple nested objects and arrays of primitive types. The only significant limitation is that arrays of nested objects are not currently supported.  Custom fields may or may not be processed by the target system, depending on the defined rules.  (see examples below for custom `direction` and `product_line` fields)
 
 ### Example
 
@@ -45,7 +46,8 @@ Any other name/value pair that is valid in [JSON](https://en.wikipedia.org/wiki/
       "product_line": "fire",
       "product": "Renters",
       "amount": 123.45,
-      "href" : "https://my.quotes.net/25b8d74f-3becb0ede39f"
+      "href" : "https://my.quotes.net/25b8d74f-3becb0ede39f",
+	  "tags": ["win_back","quote_delivered"]
     }		
   ]
 }
