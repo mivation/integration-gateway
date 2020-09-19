@@ -19,7 +19,7 @@ The activity data feed is the standard feed for customer/partner data to come in
 | `amount` | No | decimal | `123.45` | For activities such as `quote` or `sale` where there is a relevant amount, this field provides that value.|
 | `tags` | No | string [ ] | `["tag1","tag2",tag3"]` | For activities from source systems that connect simple tag values to the activity that can be used to determine applicability for competition scoring rules.  |
 |-|-|-|-|-|
-| `void` | No | boolean | false | Used in combination with `id` to void or delete a previousley sent activity.  When `void` is `true`, `id` is required and all other values are ignored.|
+| `void` | No | boolean | false | Used in combination with `id` to void or delete a previously sent activity.  When `void` is `true`, `id` is required and all other values are ignored.|
 
 ### Custom Fields
 Nearly any other name/value pair that is valid [JSON](https://en.wikipedia.org/wiki/JSON#Data_types_and_syntax) can be provided, including simple nested objects and arrays of primitive types. The only significant limitation is that arrays of nested objects are not currently supported.  Custom fields may or may not be processed by the target system, depending on the defined rules.  (see examples below for custom `direction` and `product_line` fields)
