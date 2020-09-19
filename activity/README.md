@@ -11,13 +11,15 @@ The activity data feed is the standard feed for customer/partner data to come in
 | `user_email` | Option | email address | `jonny.test@mivation.com` | The email address to identify the user that completed the activity.  One of either `use_email` or `user_alias`, but not both, must be provided.| 
 | `user_alias` | Option | string | `jontes5` | The internal "alias" or "username" used by the organization or source system to identify the user that completed the activity.  The alias must be pre-registered with Mivation via "user-registry" transmission. *One of either `use_email` or `user_alias`, but not both, must be provided.|
 | `contact` | No | string | `Jane S` | This field can be used to annotate the contact that user was working with on activities where that is relevant.  This should ideally contain an internal value or non-PII data such as a listed phone number or a partial name. |
-| `href` | No | [URL](https://en.wikipedia.org/wiki/URL) | `https://my.crm.net/02784e36` | A url that the user can use for accessing the associated activity in the source system.
+| `href` | No | [URL](https://en.wikipedia.org/wiki/URL) | `https://my.crm.net/02784e36` | A url that the user can use for accessing the associated activity in the source system.|
 |-|-|-|-|-|
 | `end_timestamp` | No | [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | `2020-05-18T21:40:30Z` | For activity types, such as `call`, where there is a specific start and end time, this field provides the ending time.  This will be used, along with `timestamp`, to calculate `duration`, unless that is explicitly provided.|
 | `duration` | No | [ISO 8601#D](https://en.wikipedia.org/wiki/ISO_8601#Durations) | `PT25M30S` | For activity types, such as `call`, where there is a specific length of elapsed time, this field provides that value.  This will be used, along with `timestamp`, to calculate `end_timestamp`, unless that is explicitly provided. |
 | `product` | No | string | `Renters` | For activities such as `quote` where product information applies, this field provides that value. | 
 | `amount` | No | decimal | `123.45` | For activities such as `quote` or `sale` where there is a relevant amount, this field provides that value.|
 | `tags` | No | string [ ] | `["tag1","tag2",tag3"]` | For activities from source systems that connect simple tag values to the activity that can be used to determine applicability for competition scoring rules.  |
+|-|-|-|-|-|
+| `void` | No | boolean | false | Used in combination with `id` to void or delete a previousley sent activity.  When `void` is `true`, `id` is required and all other values are ignored.|
 
 ### Custom Fields
 Nearly any other name/value pair that is valid [JSON](https://en.wikipedia.org/wiki/JSON#Data_types_and_syntax) can be provided, including simple nested objects and arrays of primitive types. The only significant limitation is that arrays of nested objects are not currently supported.  Custom fields may or may not be processed by the target system, depending on the defined rules.  (see examples below for custom `direction` and `product_line` fields)
@@ -48,7 +50,11 @@ Nearly any other name/value pair that is valid [JSON](https://en.wikipedia.org/w
       "amount": 123.45,
       "href" : "https://my.quotes.net/25b8d74f-3becb0ede39f",
       "tags": ["win_back","quote_delivered"]
-    }		
+    },
+    {
+      "id": "044d54a9-a5939dbae02e",
+      "void": true
+    }
   ]
 }
 ```
