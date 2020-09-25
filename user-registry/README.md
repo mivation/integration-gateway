@@ -1,11 +1,11 @@
 # User Registry
 
-The user registry format is the method for customer/partner user information to come into Mivation applications from corporate directories.  The organization and email domain must be pre-configured by Mivation to accept the user registry.  Using this format requires the organization but own and control the email domain.
+The user registry format is the method for customer/partner user information to come into Mivation applications from corporate directories.  The organization and email domain must be pre-configured by Mivation to accept the user registry.  Using this format requires the organization own and control the email domain.
 
 ### Fields
 | Field | Required | Type/Format | Example(s) | Description|
 |-------|----------|-------------|---------|------------|
-| `id` | Yes | string | `john.smith@mycompany.com` | A unique identifier for this users as known by your systems. Any string, up to 255 chars in length, is valid. The use of email address is recommended but an internal identifier is also valid.  If not an email address, this will be used to match the `user_alias` supplied with activity data. Subsequent records received from the same source with the same "id" will be treated as updates.|
+| `id` | Yes | string | `john.smith@mycompany.com` | A unique identifier for this user as known by your systems. Any string, up to 255 chars in length, is valid. The use of email address is recommended but another identifier is also valid.  If not an email address, this will be used to match the `user_alias` supplied with activity data. Subsequent records received from the same source with the same "id" will be treated as updates.|
 | `first_name` | Yes | string | `John` | The user's first (given) name. |
 | `last_name` | Yes | string | `Smith` | The user's last (family) name. |
 | `email` | Yes | email address | `john.smith@mycompany.com` | The user's email address.  It is recommended but not required that this match the `id`. | 
@@ -22,7 +22,7 @@ The user registry format is the method for customer/partner user information to 
 | `invite_by_email` | No | Boolean | `true` | Should the system send this user an email, notifying them of their new account in the app. Ignored on updates. | 
 
 ### Notes
-When defining user app access, supply either the singular form of `role`,`org_unit`,`user_group` or the plural form `roles`,`org_units`,`user_groups`, but not both for the same type.  If both are supplied the plural (array) is used and the singular is ignored.  It is acceptable to mix between singular and plural for different types and/or apps.
+When defining user app access, supply either the singular form of `role`/`org_unit`/`user_group` or the plural form `roles`/`org_units`/`user_groups`, but not both, for the same type.  If both are supplied, the plural (array) is used and the singular is ignored.  It is acceptable to mix between singular and plural for different types and/or apps.
 
 ### Example
 
@@ -51,4 +51,3 @@ When defining user app access, supply either the singular form of `role`,`org_un
 
 ### Advanced
 There is an advanced from of the user-registry format where roles and groups can be specified per app per org unit.  This is for more fine grained permissions in situations where users have access to multiple org units, with differing role assignments.  See "[advanced-example.json](advanced-example.json)".
-
