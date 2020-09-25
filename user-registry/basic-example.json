@@ -1,0 +1,57 @@
+{
+    "request_id": "b8af0982-359c93a7378f",
+    "format": "user-registry",
+    "payload": [
+        {
+            "id": "john.smith@mycompany.com",
+            "first_name": "John",
+            "last_name": "Smith",
+            "email": "john.smith@mycompany.com",
+            "mobile_phone": "+15095551212",
+            "time_zone": "America/New_York",
+            "apps": [
+                {
+                    "app": "racing_snail",
+                    "role": "producer",
+                    "org_unit": "org1"
+                },
+                {
+                    "app": "leaderboard_legends",
+                    "role": "Team Member",
+                    "org_unit": "org1",
+                    "user_group": "sales"
+                }
+            ],
+            "invite_by_email": true
+        },
+        {
+            "id": "jane.doe@mycompany.com",
+            "first_name": "Jane",
+            "last_name": "Doe",
+            "email": "jane.doe@mycompany.com",
+            "mobile_phone": "+15095552323",
+            "time_zone": "America/Los_Angeles",
+            "apps": [
+                {
+                    "app": "racing_snail",
+                    "roles": ["administrator", "producer"],
+                    "org_units": ["org1","org2"]
+                },
+                {
+                    "app": "leaderboard_legends",
+                    "roles": ["Team Admin"],
+                    "org_units": ["org1"],
+                    "user_groups": ["red-team"]
+                },
+                {
+                    "app": "insights",
+                    "org_units": ["org1","org2"]
+                }
+            ]
+        },
+        {
+            "id": "jim.jones@mycompany.com",
+            "disable": true
+        }
+    ]
+}

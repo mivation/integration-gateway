@@ -1,0 +1,43 @@
+{
+    "request_id": "0a3852e7-9e22dfa99ab2",
+    "format": "user-registry",
+    "payload": [
+        {
+            "id": "sarah.thompson@mycompany.com",
+            "first_name": "Sarah",
+            "last_name": "Thompson",
+            "email": "sarah.thompson@mycompany.com",
+            "mobile_phone": "+15095556767",
+            "time_zone": "America/Los_Angeles",
+            "apps": [
+                {
+                    "app": "racing_snail",
+                    "access":[
+                        {
+                            "org_unit": "org1", 
+                            "roles": ["administrator", "producer"]
+                        },
+                        {
+                            "org_unit": "org2", 
+                            "roles": ["producer"]
+                        }
+                    ]
+                },
+                {
+                    "app": "leaderboard_legends",
+                    "access":[
+                        {
+                            "org_unit": "org1", 
+                            "roles": ["Team Admin"]
+                            "user_groups": ["sales"]
+                        },
+                        {
+                            "org_unit": "org2", 
+                            "roles": ["Team Member"]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
