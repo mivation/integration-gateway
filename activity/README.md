@@ -10,6 +10,7 @@ The activity data feed is the standard feed for customer/partner data to come in
 | `timestamp` | Yes | [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) | `2020-05-18T21:15:00-5:00` | The date and time that the activity occurred.  Note the inclusion of the UTC offset.  If the timestamp is UTC then it should be in format `2020-05-18T21:15:00Z`.|
 | `user_email` | Option | email address | `jonny.test@mivation.com` | The email address to identify the user that completed the activity.  One of either `use_email` or `user_alias`, but not both, must be provided.| 
 | `user_alias` | Option | string | `jontes5` | The internal "alias" or "username" used by the organization or source system to identify the user that completed the activity.  The alias must be pre-registered with Mivation via "user-registry" transmission. *One of either `use_email` or `user_alias`, but not both, must be provided.|
+| `org_unit` | No | string | `org1` | This field is used by larger organizations to direct this activity to a specific workgroup or sub-account within the organization hierarchy. If not supplied, the system will attempt to determine this by user membership (via alias or email). If supplied, the value needs to match your organization configuration. |
 | `contact` | No | string | `Jane S` | This field can be used to annotate the contact that user was working with on activities where that is relevant.  This should ideally contain an internal value or non-PII data such as a listed phone number or a partial name. |
 | `href` | No | [URL](https://en.wikipedia.org/wiki/URL) | `https://my.crm.net/02784e36` | A url that the user can use for accessing the associated activity in the source system.|
 |-|-|-|-|-|
@@ -19,7 +20,7 @@ The activity data feed is the standard feed for customer/partner data to come in
 | `amount` | No | decimal | `123.45` | For activities such as `quote` or `sale` where there is a relevant amount, this field provides that value.|
 | `tags` | No | string [ ] | `["tag1","tag2",tag3"]` | For activities from source systems that connect simple tag values to the activity that can be used to determine applicability for competition scoring rules.  |
 |-|-|-|-|-|
-| `void` | No | boolean | false | Used in combination with `id` to void or delete a previously sent activity.  When `void` is `true`, `id` is required and all other values are ignored.|
+| `void` | No | boolean | `false` | Used in combination with `id` to void or delete a previously sent activity.  When `void` is `true`, `id` is required and all other values are ignored.|
 
 ### Custom Fields
 Nearly any other name/value pair that is valid [JSON](https://en.wikipedia.org/wiki/JSON#Data_types_and_syntax) can be provided, including simple nested objects and arrays of primitive types. The only significant limitation is that arrays of nested objects are not currently supported.  Custom fields may or may not be processed by the target system, depending on the defined rules.  (see examples below for custom `direction` and `product_line` fields)
@@ -36,6 +37,7 @@ Nearly any other name/value pair that is valid [JSON](https://en.wikipedia.org/w
       "timestamp": "2020-05-18T21:15:00-5:00",
       "duration": "PT25M30S",
       "user_email": "jonny.test@mivation.com",
+      "org_unit": "org1",
       "contact": "+18774289403",
       "direction": "outbound"
     },

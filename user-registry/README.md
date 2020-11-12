@@ -20,6 +20,7 @@ The user registry format is the method for customer/partner user information to 
 | `{apps}.user_group` | Option | string | `sales` | The user group (team) the user will be added in, based on codes defined for groups/teams in app.
 | `{apps}.user_groups` | Option | string [] | `["sales","service"]` | An array groups/teams for the user in the app.
 | `invite_by_email` | No | Boolean | `true` | Should the system send this user an email, notifying them of their new account in the app. Ignored on updates. | 
+| `disable` | No | boolean | `false` | Used in combination with `id` to disable a previously sent user.  When `disable` is `true`, `id` is required and all other values are ignored.|
 
 ### Notes
 When defining user app access, supply either the singular form of `role`/`org_unit`/`user_group` or the plural form `roles`/`org_units`/`user_groups`, but not both, for the same type.  If both are supplied, the plural (array) is used and the singular is ignored.  It is acceptable to mix between singular and plural for different types and/or apps.
