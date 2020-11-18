@@ -30,10 +30,10 @@ The Mivation solutions support push of data via a flexible integration-gateway t
 
 ## API Endpoints
 
-**Sandbox / Testing**
+**Sandbox / Testing**  
 https://gateway.sandbox.mivation.com/push
 
-**Production**
+**Production**  
 https://gateway.mivation.com/push
 
 *Both of the above endpoints accept only HTTPS POST requests with a content-type of "text/json" or "application/json".  Attempting to visit them in your browser will usually result in a 405 error.*
