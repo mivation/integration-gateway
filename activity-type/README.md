@@ -11,10 +11,11 @@ The activity types are the configuration feed for customer/partner data to come 
 | `fields` | No | {object} [] | - | An array of fields that will come with the activity data.  |
 | `{fields}.id` | Yes | string | `direction` | The identifier for the filed that will match the field (key) in the JSON of the activity record. |
 | `{fields}.label` | No | string | `Call Direction` | The user-friendly label for the field being defined. If not supplied, the `id` will be displayed. |
+| `{fields}.description` | No | string | `Longer text goes here` | A longer, helpful, text description of the field and how it should be used. *(max 255 chars)* |
 | `{fields}.input` | No | string | `select` | Visual control to be used for the field.  Options are: `text`, `number`, `textarea`, `radio`, `checkbox`, `select` and `multi-select`.  If not supplied, the system will use an appropriate input control for the data type. |
 | `{fields}.data_type` | No | string | `string` | Type of data contained in the field.  Options are: `string`, `integer`, `double`, `boolean`, `datetime`, `date`, `duration`.  The default is `string`. |
 | `{fields}.values` | No | string [] *or* {key/value} | `["Inbound","Outbound"]` | A list of possible values for the field, to be displayed when the `input` is set to `select` or `checkbox`.  If sent as a JSON object it will be treated as key/value pairs, supporting data value vs. display label. |
-| `{fields}.operators` | No | string [] | `["in","not_in"]` | *(Advanced Configuration)* A list of supported comparison operators for the field.  It's normally recommended to omit this and let the system choose appropriate operators for the data type and input. |
+| `{fields}.operators` | No | string [] | `["equal","not_equal"]` | *(Advanced Configuration)* A list of supported comparison operators for the field.  It's normally recommended to omit this and let the system choose appropriate operators for the data type and input. |
 | `{fields}.filter_options` | No | {object} | - | *(Advanced Configuration)* Advanced options for filter setup. Detail will be provided if this is required for your configuration.  |
 |-|-|-|-|-|
 | `delete` | No | boolean | `false` | Used in combination with `id` to delete a previously sent activity type.  When `delete` is `true`, `id` is required and all other values are ignored.|
