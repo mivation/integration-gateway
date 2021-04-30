@@ -19,7 +19,7 @@ The Mivation solutions support push of data via a flexible integration-gateway t
 - Our server queues all request using enterprise grade queuing technology.  You can expect all requests to be turned around by our server sub-second.
 - The `format` in the post is assigned by Mivation during integration planning with the credentials.
 - The is an optional `id` for each payload record that is *required* for updatable data.
-- Payloads may be split smaller fragments for processing. When split, one callback will be sent for each fragment.
+- Payloads may be split smaller fragments for processing. 
 
 
 ----
