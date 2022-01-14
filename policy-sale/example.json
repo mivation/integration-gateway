@@ -1,0 +1,22 @@
+{
+  "format": "policy-sale",
+  "payload": [
+    {
+      "id": "12345w4q2",
+      "href": "https://my.crm.net/12345w4q2",
+      "org_unit": "01A2B3",
+      "user_email": "john@mycompany.com",
+      "line_of_business": "Auto",
+      "policy_type": "Motorcycle",
+      "business_type": "Raw New",
+      "binding_company": "Acme Auto",
+      "policy_number": "12345",
+      "customer_name": "John Doe",
+      "written_date": "2021-08-30",
+      "issued_date": "2021-09-03",
+      "term_type": "Semi-Annual",
+      "term_premium": 625.40,
+      "item_count": 1
+    }
+  ]
+}
