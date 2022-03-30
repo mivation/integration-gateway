@@ -29,7 +29,7 @@ The policy sales data feed is the standard feed for customer/partner data to com
 | `term_type` | No | string | `Annual` | The term of the policy for premium purposes.  Default is "Annual" if not specified. |
 | `term_premium` | No | decimal | `625.30` | The premium per-term of the policy. |
 | `annual_premium` | No | decimal | `1234.50` | The annualized premium for the policy.  If not supplied will be automatically calculated from the `term_type` and `term_premium`. |
-| `commissionable premium` | No | decimal | `1100.15` | The amount of the premium that is commission eligible if some of the premium is not.  Usually only used in independent brokered insurance sales. |
+| `commissionable_premium` | No | decimal | `1100.15` | The amount of the premium that is commission eligible if some of the premium is not.  Usually only used in independent brokered insurance sales. |
 | `agent_commission` | No | decimal | `215.70` | The amount of commission payable to the agent for the sale. |
 | `quoted_term_premium` | No | decimal | `615.00` | The originally quoted term premium if differs from the issued term premium.  Useful for reporting. |
 | `finance_charge` | No | decimal | `20.00` | A finance charge that may apply to certain financial product (loan) sales.  |
