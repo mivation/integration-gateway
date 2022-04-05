@@ -35,7 +35,7 @@ The policy sales data feed is the standard feed for customer/partner data to com
 | `finance_charge` | No | decimal | `20.00` | A finance charge that may apply to certain financial product (loan) sales.  |
 | `brokerage_fee` | No | decimal | `50.00` | A brokerage fee that may apply to some types of brokered financial or insurance products. |
 | `item_count` | No | integer | `1` | The number of items on the sale.  Usually used to denote multi-car auto policy sales. |
-| `opportunity_name` | No | decimal | `Jane's new car` | The name of the opportunity fro a back-end CRM.  useful fpr reporting. |
+| `opportunity_name` | No | string | `Jane's new car` | The name of the opportunity fro a back-end CRM.  useful fpr reporting. |
 | `notes` | No | string | `Something profound` | Up to 100 chars of note on the policy or sale |
 |-|-|-|-|-|
 | `void` | No | boolean | `false` | Used in combination with `id` to void or delete a previously sent sale.  When `void` is `true`, `id` is required and all other values are ignored.|
