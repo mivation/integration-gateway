@@ -12,7 +12,7 @@ The policy sales data feed is the standard feed for customer/partner data to com
 | `org_unit` | No | string | `org1` | This field is used by larger organizations to direct this sale to a specific workgroup or sub-account within the organization hierarchy. If not supplied, the system will attempt to determine this by user membership (via alias or email). If supplied, the value needs to match your organization configuration. |
 | `line_of_business` | Yes | string | `Auto` | The line of business for product of the policy or account sale.  This value should match what is defined int the application. |
 | `policy_type` | Yes | string | `Motorcycle` | The sub-type of the product under the line-of-business |
-| `business_type` | Yes | string | `Raw New` | Maps to the business types defined int he application for differentiating sales |
+| `business_type` | No | string | `Raw New` | Maps to the business types defined int he application for differentiating sales.  Highly recommended, but not required. |
 | `binding_company` | No | string | `Acme Auto` | The backing company that the policy or account is bound under.  Required if multiple binding companies are available for the LoB. |
 | `policy_number` | No | string | `123456` | The policy or account number resulting form the sale |
 | `prior_insurance_co` | No | string | `Progressive` | For insurance sales, The company that the customer was insured by prior to the sale.  Matches to the Insurance companies list in the application. |
@@ -26,6 +26,8 @@ The policy sales data feed is the standard feed for customer/partner data to com
 | `written_date` | Yes* | date | `2020-08-30` | The date the policy or sale was written or the app was submitted. |
 | `issued_date` | Yes* | date | `2020-09-02` | The date the policy or sale was issued or made effective. |
 | `chargeback_date` | No | date | `2020-09-22` | A date that the policy was canceled and charged-back. |
+| `expire_date` | No | date | `2021-09-01` | The date the policy will expire as of this term. |
+| `origin_date` | No | date | `2020-08-24` | The date the policy was originated. |
 | `term_type` | No | string | `Annual` | The term of the policy for premium purposes.  Default is "Annual" if not specified. |
 | `term_premium` | No | decimal | `625.30` | The premium per-term of the policy. |
 | `annual_premium` | No | decimal | `1234.50` | The annualized premium for the policy.  If not supplied will be automatically calculated from the `term_type` and `term_premium`. |
