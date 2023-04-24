@@ -28,6 +28,7 @@ The policy sales data feed is the standard feed for customer/partner data to com
 | `chargeback_date` | No | date | `2020-09-22` | A date that the policy was canceled and charged-back. |
 | `expire_date` | No | date | `2021-09-01` | The date the policy will expire as of this term. |
 | `origin_date` | No | date | `2020-08-24` | The date the policy was originated. |
+| `statement_date` | No | date | `2022-12-31` | If this update comes from the processing of an agency commission statement, this should be the statement date, usually the first or last day of a month. |
 | `term_type` | No | string | `Annual` | The term of the policy for premium purposes.  Default is "Annual" if not specified. |
 | `term_premium` | No | decimal | `625.30` | The premium per-term of the policy. |
 | `annual_premium` | No | decimal | `1234.50` | The annualized premium for the policy.  If not supplied will be automatically calculated from the `term_type` and `term_premium`. |
