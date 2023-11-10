@@ -12,7 +12,7 @@ The policy sales data feed is the standard feed for customer/partner data to com
 | `org_unit` | No | string | `org1` | This field is used by larger organizations to direct this sale to a specific workgroup or sub-account within the organization hierarchy. If not supplied, the system will attempt to determine this by user membership (via alias or email). If supplied, the value needs to match your organization configuration. |
 | `line_of_business` | Yes | string | `Auto` | The line of business for product of the policy or account sale.  This value should match what is defined int the application. |
 | `policy_type` | Yes | string | `Motorcycle` | The sub-type of the product under the line-of-business |
-| `business_type` | No | string | `Raw New` | Maps to the business types defined int he application for differentiating sales.  Highly recommended, but not required. |
+| `business_type` | No | string | `Raw New` | Maps to the business types defined in the application for differentiating sales.  Highly recommended, but not required. |
 | `binding_company` | No | string | `Acme Auto` | The backing company that the policy or account is bound under.  Required if multiple binding companies are available for the LoB. |
 | `policy_number` | No | string | `123456` | The policy or account number resulting form the sale |
 | `prior_insurance_co` | No | string | `Progressive` | For insurance sales, The company that the customer was insured by prior to the sale.  Matches to the Insurance companies list in the application. |
@@ -37,8 +37,10 @@ The policy sales data feed is the standard feed for customer/partner data to com
 | `quoted_term_premium` | No | decimal | `615.00` | The originally quoted term premium if differs from the issued term premium.  Useful for reporting. |
 | `finance_charge` | No | decimal | `20.00` | A finance charge that may apply to certain financial product (loan) sales.  |
 | `brokerage_fee` | No | decimal | `50.00` | A brokerage fee that may apply to some types of brokered financial or insurance products. |
-| `item_count` | No | integer | `1` | The number of items on the sale.  Usually used to denote multi-car auto policy sales. |
-| `opportunity_name` | No | string | `Jane's new car` | The name of the opportunity fro a back-end CRM.  useful fpr reporting. |
+| `adjustment_type` | No | string | `Rate Change` | Maps to the adjustment types defined in the application for differentiating premium and/or commission adjustments. |
+| `source_system` | No | string | `Guidewire` | Identifies the source system of record for this new or updated policy sale transaction. |
+| `item_count` | No | integer | `1` | The number of items on the sale.  Usually used to denote multi-vehicle auto policy sales. |
+| `opportunity_name` | No | string | `Jane's new car` | The name of the opportunity fro a back-end CRM.  useful for reporting. |
 | `notes` | No | string | `Something profound` | Up to 100 chars of note on the policy or sale |
 |-|-|-|-|-|
 | `void` | No | boolean | `false` | Used in combination with `id` to void or delete a previously sent sale.  When `void` is `true`, `id` is required and all other values are ignored.|
