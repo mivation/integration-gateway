@@ -10,8 +10,9 @@ The setup types are the configuration feed for customer/partner data to come int
 | `label` | No | string | `New Business` | The user-friendly label for the type being defined. If not supplied, the `value` will be displayed. |
 | `org_unit` | Yes | string | `org1` | This field is used to direct this setup type to a specific sub-account within the organization hierarchy. |
 | `line_of_business` | No** | string | `Auto` | The line of business for certain setup types that vary by line.  `policy_type`,`business_type`, and `followup` all require `line_of_business`.  For other types it is ignored. |
+| `value_locked` | No | boolean | `true` | If set to `true` the user will not be able to edit the `value` for this setup.  Users with account admin rights can still change the `label` and deactivate this setup. |
 |-|-|-|-|-|
-| `delete` | No | boolean | `false` | Used in combination with `value` to delete a previously sent Setup.|
+| `delete` | No | boolean | `false` | Used in combination with `value` to delete a previously sent setup.|
 
 
 ### Example
@@ -24,7 +25,8 @@ The setup types are the configuration feed for customer/partner data to come int
       "type": "location",
       "value": "L123456",
       "label": "Main Office",
-      "org_unit": "org1"
+      "org_unit": "org1",
+      "value_locked": true
     },
     {
       "type": "business_type",
